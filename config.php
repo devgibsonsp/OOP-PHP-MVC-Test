@@ -7,8 +7,7 @@ define("DB_PASS", "turtles123");
 define("DB_NAME", "shareboard");
 
 // Define URL
-define("ROOT_PATH", "/");
+define("ROOT_PATH", "/test/");
 define("ROOT_URL", "http://localhost/test/");
-
 
 ?>
