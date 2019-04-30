@@ -5,6 +5,7 @@ require('config.php');
 // Adding base classes
 require('classes/Bootstrap.php');
 require('classes/Controller.php');
+require('classes/Model.php');
 
 // Adding controllers
 require('controllers/home.php');
