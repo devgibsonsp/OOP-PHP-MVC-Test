@@ -51,13 +51,12 @@
 </nav>
 
 <main role="main" class="container">
+<div class="row">
+<?php Messages::display(); ?>
+</div>
 
 <div class="row">
-
-    <?php 
-    Messages::display();
-    require($view); 
-    ?>
+    <?php require($view); ?>
 </div>
 
 </main>
