@@ -16,11 +16,13 @@ require('classes/Model.php');
 require('controllers/home.php');
 require('controllers/users.php');
 require('controllers/shares.php');
+require('controllers/courses.php');
 
 // Adding models
 require('models/home.php');
 require('models/user.php');
 require('models/share.php');
+require('models/course.php');
 
 $bootstrap = new Bootstrap($_GET);
 $controller = $bootstrap->createController();
