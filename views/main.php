@@ -6,7 +6,7 @@
     <title>Shareboard</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/style.css" />
     <!-- <script src="main.js"></script> -->
 </head>
 <body>

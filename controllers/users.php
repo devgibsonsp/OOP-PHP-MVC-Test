@@ -11,6 +11,11 @@ class Users extends Controller {
         $this->returnView($viewmodel->login(), true);
     }
 
+    protected function userlist() {
+        $viewmodel = new UserModel();
+        $this->returnView($viewmodel->userlist(), true);
+    }
+
     protected function logout() {
         unset($_SESSION['is_logged_in']);
         unset($_SESSION['user_data']);

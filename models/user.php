@@ -28,6 +28,22 @@ class UserModel extends Model{
 		}
 		return;
     }
+
+    public function userlist() {
+        $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        if($post['submit']){
+            $this->query('SELECT * FROM users WHERE id = :userId');
+            $this->bind(':userId', $post['userId']);
+            $rows = $this->resultSet();
+        } else {
+            $this->query('SELECT * FROM users');
+            $rows = $this->resultSet();
+            
+        }
+        return $rows;
+
+    }
     
     public function login() {
 		// Sanitize POST
