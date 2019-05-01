@@ -5,7 +5,7 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Shareboard</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <!-- <script src="main.js"></script> -->
 </head>
@@ -25,12 +25,27 @@
       <li class="nav-item">
       <a class="nav-link" href="<?php echo ROOT_URL; ?>shares">Shares</a>
       </li>
+
+      <?php if(isset($_SESSION['is_logged_in'])) : ?>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo ROOT_URL; ?>">Welcome <?php echo $_SESSION['user_data']['name']; ?> </a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?php echo ROOT_URL; ?>users/logout">Logout</a>
+      </li>
+
+      <?php else : ?>
+
       <li class="nav-item">
         <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login</a>
       </li>
       <li class="nav-item">
       <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Register</a>
       </li>
+
+    <?php endif; ?>
+
     </ul>
   </div>
 </nav>
