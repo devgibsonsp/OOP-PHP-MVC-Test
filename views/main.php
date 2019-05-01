@@ -53,7 +53,11 @@
 <main role="main" class="container">
 
 <div class="row">
-    <?php require($view); ?>
+
+    <?php 
+    Messages::display();
+    require($view); 
+    ?>
 </div>
 
 </main>

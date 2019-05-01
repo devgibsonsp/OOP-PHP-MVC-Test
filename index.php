@@ -6,7 +6,8 @@ session_start();
 // Include Config
 require('config.php');
 
-// Adding base classes
+// Adding classes
+require('classes/Messages.php');
 require('classes/Bootstrap.php');
 require('classes/Controller.php');
 require('classes/Model.php');
