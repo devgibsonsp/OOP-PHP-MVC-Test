@@ -12,7 +12,15 @@ class Courses extends Controller{
         }
 		$viewmodel = new CourseModel();
 		$this->ReturnView($viewmodel->add(), true);
-	}
+    }
+    
+    protected function delete() {
+        if(!isset($_SESSION['is_logged_in'])) {
+            header('Location: '.ROOT_URL.'courses');
+        }
+        $viewmodel = new CourseModel();
+        $this->ReturnView($viewmodel->delete(), true);
+    }
 }
 
 ?>

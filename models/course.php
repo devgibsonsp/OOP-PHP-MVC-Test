@@ -6,13 +6,13 @@ class CourseModel extends Model{
 		return $rows;
 	}
 
-	public function add(){
+	public function add() {
 		// Sanitize POST
 		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
 		if($post['submit']){
 
-            if($post['course_name'] == '' || $post['course']) {
+            if($post['course_name'] == '' || $post['course'] == '') {
                 Messages::setMsg('Please fill in all fields','error');
                 return;
             }
@@ -24,9 +24,32 @@ class CourseModel extends Model{
 			// Verify
 			if($this->lastInsertId()){
 				// Redirect
-				header('Location: '.ROOT_URL.'shares');
+				header('Location: '.ROOT_URL.'courses');
 			}
 		}
 		return;
-	}
+    }
+    
+    public function delete() {
+		// Sanitize POST
+		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+		if($post['submit']){
+
+            if($post['id'] == '') {
+                Messages::setMsg('Please fill in all fields','error');
+                return;
+            }
+			// Insert into MySQL
+			$this->query('DELETE FROM courses WHERE id = :id');
+			$this->bind(':id', $post['id']);
+			$this->execute();
+			// Verify
+			if($this->lastInsertId()){
+				// Redirect
+				header('Location: '.ROOT_URL.'courses');
+			}
+		}
+		return;
+    }
 }
