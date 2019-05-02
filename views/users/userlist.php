@@ -7,6 +7,7 @@
             <input class="user-id" style="display: none;" type="text" name="userId" value="<?php echo $item['id']; ?>">
             <input class="btn btn-primary" name="submit" type="submit" value="View Profile" />
         </form>
+        <a class="btn btn-danger" href="<?php echo ROOT_PATH; ?>">Edit</a>
         <hr />
         <br />
     </div>

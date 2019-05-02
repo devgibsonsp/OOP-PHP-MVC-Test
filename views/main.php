@@ -25,6 +25,9 @@
       <li class="nav-item">
       <a class="nav-link" href="<?php echo ROOT_URL; ?>shares">Shares</a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<?php echo ROOT_URL; ?>users/userlist">User List</a>
+      </li>
 
       <?php if(isset($_SESSION['is_logged_in'])) : ?>
 
